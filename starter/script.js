@@ -17,9 +17,10 @@ score0Element.textContent = 0;
 score1Element.textContent = 0;
 diceImg.classList.add("hidden");
 
-//todo: PHASE 2: Rolling of Dice (Roll Dice Button)
+//todo: PHASE 2: Rolling Dice Functionality (Roll Dice Button)
 
 rollDiceBtn.addEventListener("click", function () {
-  const randomDiceNumber = Math.trunc(Math.random() * 6) + 1; // Random nos. 1 to 6
+  //* Generating Random Dice Roll
+  const randomDiceNumber = Math.trunc(Math.random() * 6) + 1;
   console.log(randomDiceNumber);
 });
