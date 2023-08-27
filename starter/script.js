@@ -1,3 +1,3 @@
 "use strict";
 
-const score0 = document.querySelector("#score--1");
+const score0 = document.querySelector("#score--0");
