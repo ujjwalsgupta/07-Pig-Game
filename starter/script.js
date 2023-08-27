@@ -27,6 +27,7 @@ rollDiceBtn.addEventListener("click", function () {
   console.log(randomDiceNumber);
 
   //* Display Dice
+  diceImg.classList.remove("hidden");
 
   //* Check for rolled 1: if true, switch to next player
 });
