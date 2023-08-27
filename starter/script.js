@@ -28,6 +28,9 @@ rollDiceBtn.addEventListener("click", function () {
 
   //* Display Dice
   diceImg.classList.remove("hidden");
+  diceImg.src = `dice-${randomDiceNumber}.png`;
 
   //* Check for rolled 1: if true, switch to next player
+  if (randomDiceNumber === 1) {
+  }
 });
