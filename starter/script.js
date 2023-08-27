@@ -15,3 +15,5 @@ const diceImg = document.querySelector(".dice");
 score0Element.textContent = 0;
 score1Element.textContent = 0;
 diceImg.classList.add("hidden");
+
+//todo: PHASE 2: Rolling of Dice (Roll Dice Button)
