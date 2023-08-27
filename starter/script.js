@@ -19,7 +19,7 @@ diceImg.classList.add("hidden");
 
 //todo: PHASE 2: Rolling of Dice (Roll Dice Button)
 
-const randomDiceNumber = Math.trunc(Math.random() * 6) + 1; // Random nos. 1 to 6
 rollDiceBtn.addEventListener("click", function () {
+  const randomDiceNumber = Math.trunc(Math.random() * 6) + 1; // Random nos. 1 to 6
   console.log(randomDiceNumber);
 });
