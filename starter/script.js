@@ -4,7 +4,7 @@
 
 const score0Element = document.querySelector("#score--0");
 const score1Element = document.getElementById("score--1");
-const current0Element = document.querySelector(".current--0");
+const current0Element = document.getElementById("current--0");
 const diceImg = document.querySelector(".dice");
 const newGameBtn = document.querySelector(".btn--new");
 const rollDiceBtn = document.querySelector(".btn--roll");
