@@ -5,6 +5,7 @@
 const score0Element = document.querySelector("#score--0");
 const score1Element = document.getElementById("score--1");
 const diceImg = document.querySelector(".dice");
+const 
 
 //? .getElementById("IdName"):
 //* this method is used to select the id mentioned inside it.
@@ -17,3 +18,5 @@ score1Element.textContent = 0;
 diceImg.classList.add("hidden");
 
 //todo: PHASE 2: Rolling of Dice (Roll Dice Button)
+
+const randomDiceNumber = Math.trunc(Math.random() * 6) + 1; // Random nos. 1 to 6
