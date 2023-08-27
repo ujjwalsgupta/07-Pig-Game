@@ -5,7 +5,9 @@
 const score0Element = document.querySelector("#score--0");
 const score1Element = document.getElementById("score--1");
 const diceImg = document.querySelector(".dice");
+const newGameBtn = document.querySelector(".btn--new");
 const rollDiceBtn = document.querySelector(".btn--roll");
+const holdBtn = document.querySelector(".btn--hold");
 
 //? .getElementById("IdName"):
 //* this method is used to select the id mentioned inside it.
@@ -23,4 +25,8 @@ rollDiceBtn.addEventListener("click", function () {
   //* Generating Random Dice Roll
   const randomDiceNumber = Math.trunc(Math.random() * 6) + 1;
   console.log(randomDiceNumber);
+
+  //* Display Dice
+
+  //* Check for rolled 1: if true, switch to next player
 });
