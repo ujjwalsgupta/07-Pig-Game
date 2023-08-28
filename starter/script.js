@@ -39,6 +39,7 @@ rollDiceBtn.addEventListener("click", function () {
     currentScore += randomDiceNumber;
     current0Element.textContent = currentScore;
   } else {
+    // randomDiceNumber === 1
     // Switch to next player
   }
 });
