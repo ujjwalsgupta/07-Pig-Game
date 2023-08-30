@@ -5,6 +5,7 @@
 const score0Element = document.querySelector("#score--0");
 const score1Element = document.getElementById("score--1");
 const current0Element = document.getElementById("current--0");
+const current1Element = document.getElementById("current--1");
 const diceImg = document.querySelector(".dice");
 const newGameBtn = document.querySelector(".btn--new");
 const rollDiceBtn = document.querySelector(".btn--roll");
@@ -41,6 +42,7 @@ rollDiceBtn.addEventListener("click", function () {
     currentScore += randomDiceNumber;
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
+    //* The text content will change according to the active player, if activePlayer = 1, then the score will be added to the id "current--1" & due to which current1Element will change.
   } else {
     // randomDiceNumber === 1
     // Switch to next player
