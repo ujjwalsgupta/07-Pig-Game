@@ -47,5 +47,6 @@ rollDiceBtn.addEventListener("click", function () {
     // randomDiceNumber === 1
     // Switch to next player
     currentScore = 0;
+    activePlayer = activePlayer === 0 ? 1 : 0;
   }
 });
