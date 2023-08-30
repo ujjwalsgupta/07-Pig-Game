@@ -20,7 +20,7 @@ score0Element.textContent = 0;
 score1Element.textContent = 0;
 diceImg.classList.add("hidden");
 
-const scores = [0, 0]; //* scores array stores the current scores of each player.
+const scores = [0, 0]; //* scores array stores the total scores of each player.
 let currentScore = 0;
 let activePlayer = 0; //* Here, active player is the variable which has values 0 & 1 as active player 0 holds value 0 & active player 1 holds value 1.
 
@@ -39,6 +39,8 @@ rollDiceBtn.addEventListener("click", function () {
   if (randomDiceNumber !== 1) {
     // Add dice No. to current score
     currentScore += randomDiceNumber;
+    document.getElementById(`current--${activePlayer}`).textContent =
+      currentScore;
   } else {
     // randomDiceNumber === 1
     // Switch to next player
