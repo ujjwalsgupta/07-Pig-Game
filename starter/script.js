@@ -53,5 +53,7 @@ rollDiceBtn.addEventListener("click", function () {
 
     activePlayer = activePlayer === 0 ? 1 : 0;
     //* task of above code: Switching the active player when 1 comes.
+
+    //? Visual & style changes when 1 comes.
   }
 });
