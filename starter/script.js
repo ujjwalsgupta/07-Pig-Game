@@ -20,7 +20,9 @@ score0Element.textContent = 0;
 score1Element.textContent = 0;
 diceImg.classList.add("hidden");
 
+let scores = [0, 0]; //* scores array stores the current scores of each player.
 let currentScore = 0;
+let activePlayer = 0; //* Here, active player is the variable which has values 0 & 1 as active player 0 holds value 0 & active player 1 holds value 1.
 
 //todo: PHASE 2: Rolling Dice Functionality (Roll Dice Button)
 
@@ -37,11 +39,9 @@ rollDiceBtn.addEventListener("click", function () {
   if (randomDiceNumber !== 1) {
     // Add dice No. to current score
     currentScore += randomDiceNumber;
-    current0Element.textContent = currentScore;
   } else {
     // randomDiceNumber === 1
     // Switch to next player
     currentScore = 0;
-    current0Element.textContent = currentScore;
   }
 });
