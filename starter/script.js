@@ -46,7 +46,12 @@ rollDiceBtn.addEventListener("click", function () {
   } else {
     // randomDiceNumber === 1
     // Switch to next player
+
     currentScore = 0;
+    document.getElementById(`current--${activePlayer}`).textContent =
+      currentScore; // changing current active players' current score to 0 before switching to the active player.
+
     activePlayer = activePlayer === 0 ? 1 : 0;
+    //* task of above code: Switching the active player when 1 comes.
   }
 });
