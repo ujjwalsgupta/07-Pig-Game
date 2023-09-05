@@ -58,5 +58,7 @@ rollDiceBtn.addEventListener("click", function () {
     //* task of above code: Switching the active player when 1 in dice comes.
 
     //? Visual & style changes when 1 in dice comes.
+    player0Element.classList.toggle("player--0");
+    player1Element.classList.toggle("player--1");
   }
 });
