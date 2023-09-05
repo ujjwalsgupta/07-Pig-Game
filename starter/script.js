@@ -2,10 +2,13 @@
 
 //todo: Selecting Elements
 
+const player0Element = document.querySelector(".player--0");
+const player1Element = document.querySelector(".player--1");
 const score0Element = document.querySelector("#score--0");
 const score1Element = document.getElementById("score--1");
 const current0Element = document.getElementById("current--0");
 const current1Element = document.getElementById("current--1");
+
 const diceImg = document.querySelector(".dice");
 const newGameBtn = document.querySelector(".btn--new");
 const rollDiceBtn = document.querySelector(".btn--roll");
@@ -54,6 +57,6 @@ rollDiceBtn.addEventListener("click", function () {
     activePlayer = activePlayer === 0 ? 1 : 0;
     //* task of above code: Switching the active player when 1 in dice comes.
 
-    //? Visual & style changes when 1 comes.
+    //? Visual & style changes when 1 in dice comes.
   }
 });
