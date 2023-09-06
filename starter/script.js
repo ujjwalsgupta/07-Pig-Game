@@ -18,6 +18,25 @@ const holdBtn = document.querySelector(".btn--hold");
 //* this method is used to select the id mentioned inside it.
 //* The only difference between .querySelector("") & .getElementById("") is that querySelector is universal (i.e., it can select by elementName, .className, #idName) but getElementById only selects the Id inside it without # symbol.
 
+//? Code for Switch Player
+
+const switchPlayer = function () {
+  currentScore = 0;
+  document.getElementById(`current--${activePlayer}`).textContent =
+    currentScore;
+  // Here, active player is default 0.
+  //* changing the current active players' current score to 0 before switching to the active player.
+
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  //! task of above code: Switching the active player when 1 in dice comes.
+
+  //? Visual & style changes when 1 in dice comes.
+  player0Element.classList.toggle("player--active");
+  player1Element.classList.toggle("player--active");
+
+  //* .toggle("class-name") method removes the class mentioned inside it when is applied to the element & adds the class mentioned inside is not applied to the element.
+};
+
 //todo: PHASE 1: Starting Conditions
 
 score0Element.textContent = 0;
@@ -33,7 +52,6 @@ let activePlayer = 0; //* Here, active player is the variable which has values 0
 rollDiceBtn.addEventListener("click", function () {
   //? Generating Random Dice Roll
   const randomDiceNumber = Math.trunc(Math.random() * 6) + 1;
-  console.log(randomDiceNumber);
 
   //? Display Dice
   diceImg.classList.remove("hidden");
@@ -49,32 +67,15 @@ rollDiceBtn.addEventListener("click", function () {
     //* The text content will change according to the active player, if activePlayer = 0, then the score will be added to the id "current--0" & due to which current0Element will change.
   } else {
     // randomDiceNumber === 1
-    // Switch to next player
 
-    currentScore = 0;
-    document.getElementById(`current--${activePlayer}`).textContent =
-      currentScore;
-    // Here, active player is default 0.
-    //* changing the current active players' current score to 0 before switching to the active player.
-
-    activePlayer = activePlayer === 0 ? 1 : 0;
-    //! task of above code: Switching the active player when 1 in dice comes.
-
-    //? Visual & style changes when 1 in dice comes.
-    player0Element.classList.toggle("player--active");
-    player1Element.classList.toggle("player--active");
-
-    //* .toggle("class-name") method removes the class mentioned inside it when is applied to the element & adds the class mentioned inside is not applied to the element.
+    //? Switch to next player code:
+    switchPlayer();
   }
 });
 
 //todo: PHASE 3: Hold Button Functionality (Hold Button)
 
 holdBtn.addEventListener("click", function () {
-  //? Visual & style changes when hold button is pressed.
-  player0Element.classList.toggle("player--active");
-  player1Element.classList.toggle("player--active");
-
   //? Adding Current Score to Total Score
   scores[activePlayer] += currentScore;
   // score[0] = score[0] + currentScore;
@@ -82,9 +83,6 @@ holdBtn.addEventListener("click", function () {
     scores[activePlayer];
   // Here, active player is default 0.
 
-  activePlayer = activePlayer === 0 ? 1 : 0;
-  //! task of above code: Switching the active player when 1 in dice comes.
-
-  // document.getElementById(`current--${activePlayer}`).textContent =
-  //   currentScore;
+  //? Switch to next player code:
+  switchPlayer();
 });
