@@ -99,7 +99,7 @@ holdBtn.addEventListener("click", function () {
     // Here, active player is default 0.
 
     //? Check if player's score >= 100. (Winning Condition)
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       // Finish the Game
       playing = false;
       document
@@ -121,6 +121,4 @@ holdBtn.addEventListener("click", function () {
 
 //todo: PHASE 4 (Btn 4): Resetting the Game (New Game Button)
 
-newGameBtn.addEventListener("click", function () {
-  init();
-});
+newGameBtn.addEventListener("click", init);
