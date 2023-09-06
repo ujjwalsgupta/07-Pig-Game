@@ -46,7 +46,7 @@ diceImg.classList.add("hidden");
 const scores = [0, 0]; //* scores array stores the total scores of each player.
 let currentScore = 0;
 let activePlayer = 0; //* Here, active player is the variable which has values 0 & 1 as active player 0 holds value 0 & active player 1 holds value 1.
-let playing = true; //* playing variable is set to true which means that we are playing the game & we will make it false as soon as a player wins i.e., score >= 100.
+let playing = true; //* playing variable is set to true which means that we are playing the game & buttons will work. We will make playing false as soon as a player wins i.e., score >= 100 & the holdBtn, rollDiceBtn will not work then.
 
 //todo: PHASE 2 (Btn 2): Rolling Dice Functionality (Roll Dice Button)
 
@@ -88,6 +88,7 @@ holdBtn.addEventListener("click", function () {
   //? Check if player's score >= 100. (Winning Condition)
   if (scores[activePlayer] >= 100) {
     // Finish the Game
+    playing = false;
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.add("player--winner");
