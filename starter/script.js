@@ -72,11 +72,17 @@ rollDiceBtn.addEventListener("click", function () {
 
 holdBtn.addEventListener("click", function () {
   //? Visual & style changes when hold button is pressed.
-  // player0Element.classList.toggle("player--active");
-  // player1Element.classList.toggle("player--active");
+  player0Element.classList.toggle("player--active");
+  player1Element.classList.toggle("player--active");
 
   //? Adding Current Score to Total Score
   scores[activePlayer] += currentScore;
-  document.getElementById(`current--${activePlayer}`).textContent =
+  document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
+
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  //! task of above code: Switching the active player when 1 in dice comes.
+
+  // document.getElementById(`current--${activePlayer}`).textContent =
+  //   currentScore;
 });
