@@ -54,8 +54,8 @@ rollDiceBtn.addEventListener("click", function () {
     currentScore = 0;
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
-    //* Here, active player is default 0.
-    // changing the current active players' current score to 0 before switching to the active player.
+    // Here, active player is default 0.
+    //* changing the current active players' current score to 0 before switching to the active player.
 
     activePlayer = activePlayer === 0 ? 1 : 0;
     //! task of above code: Switching the active player when 1 in dice comes.
@@ -79,6 +79,7 @@ holdBtn.addEventListener("click", function () {
   scores[activePlayer] += currentScore;
   document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
+  // Here, active player is default 0.
 
   activePlayer = activePlayer === 0 ? 1 : 0;
   //! task of above code: Switching the active player when 1 in dice comes.
