@@ -19,11 +19,14 @@ const holdBtn = document.querySelector(".btn--hold");
 //* The only difference between .querySelector("") & .getElementById("") is that querySelector is universal (i.e., it can select by elementName, .className, #idName) but getElementById only selects the Id inside it without # symbol.
 
 //todo: PHASE 1: Starting Conditions
+
+let scores, currentScore, activePlayer, playing;
+
 const init = function () {
-  const scores = [0, 0]; //* scores array stores the total scores of each player.
-  let currentScore = 0;
-  let activePlayer = 0; //* Here, active player is the variable which has values 0 & 1 as active player 0 holds value 0 & active player 1 holds value 1.
-  let playing = true; //* playing variable is set to true which means that we are playing the game & buttons will work. We will make playing false as soon as a player wins i.e., score >= 100 & the holdBtn, rollDiceBtn will not work then.
+  scores = [0, 0]; //* scores array stores the total scores of each player.
+  currentScore = 0;
+  activePlayer = 0; //* Here, active player is the variable which has values 0 & 1 as active player 0 holds value 0 & active player 1 holds value 1.
+  playing = true; //* playing variable is set to true which means that we are playing the game & buttons will work. We will make playing false as soon as a player wins i.e., score >= 100 & the holdBtn, rollDiceBtn will not work then.
 
   score0Element.textContent = 0;
   score1Element.textContent = 0;
