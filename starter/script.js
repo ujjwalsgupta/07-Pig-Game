@@ -69,8 +69,8 @@ rollDiceBtn.addEventListener("click", function () {
 
 holdBtn.addEventListener("click", function () {
   //? Visual & style changes when hold button is pressed.
-  player0Element.classList.toggle("player--active");
-  player1Element.classList.toggle("player--active");
+  // player0Element.classList.toggle("player--active");
+  // player1Element.classList.toggle("player--active");
 
   //* Adding Current Score to Total Score
   scores[activePlayer] += currentScore;
