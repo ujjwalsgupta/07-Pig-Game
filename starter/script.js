@@ -64,3 +64,9 @@ rollDiceBtn.addEventListener("click", function () {
     //* .toggle("class-name") method removes the class mentioned inside it when is applied to the element & adds the class mentioned inside is not applied to the element.
   }
 });
+
+holdBtn.addEventListener("click", function () {
+  //? Visual & style changes when hold button is pressed.
+  player0Element.classList.toggle("player--active");
+  player1Element.classList.toggle("player--active");
+});
