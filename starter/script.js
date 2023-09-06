@@ -65,12 +65,15 @@ rollDiceBtn.addEventListener("click", function () {
   }
 });
 
+//todo: PHASE 3: Hold Button Functionality (Hold Button)
+
 holdBtn.addEventListener("click", function () {
   //? Visual & style changes when hold button is pressed.
   player0Element.classList.toggle("player--active");
   player1Element.classList.toggle("player--active");
 
-  currentScore = 0;
+  //* Adding Current Score to Total Score
+  scores[activePlayer] += currentScore;
   document.getElementById(`current--${activePlayer}`).textContent =
-    currentScore;
+    scores[activePlayer];
 });
