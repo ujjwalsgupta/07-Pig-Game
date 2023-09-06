@@ -31,15 +31,15 @@ let activePlayer = 0; //* Here, active player is the variable which has values 0
 //todo: PHASE 2: Rolling Dice Functionality (Roll Dice Button)
 
 rollDiceBtn.addEventListener("click", function () {
-  //* Generating Random Dice Roll
+  //? Generating Random Dice Roll
   const randomDiceNumber = Math.trunc(Math.random() * 6) + 1;
   console.log(randomDiceNumber);
 
-  //* Display Dice
+  //? Display Dice
   diceImg.classList.remove("hidden");
   diceImg.src = `dice-${randomDiceNumber}.png`;
 
-  //* Check for rolled 1: if true, switch to next player
+  //? Check for rolled 1: if true, switch to next player
   if (randomDiceNumber !== 1) {
     // Add dice No. to current score
     currentScore += randomDiceNumber;
@@ -54,7 +54,7 @@ rollDiceBtn.addEventListener("click", function () {
     currentScore = 0;
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
-    // Here, active player is default 0.
+    //* Here, active player is default 0.
     // changing the current active players' current score to 0 before switching to the active player.
 
     activePlayer = activePlayer === 0 ? 1 : 0;
@@ -75,7 +75,7 @@ holdBtn.addEventListener("click", function () {
   // player0Element.classList.toggle("player--active");
   // player1Element.classList.toggle("player--active");
 
-  //* Adding Current Score to Total Score
+  //? Adding Current Score to Total Score
   scores[activePlayer] += currentScore;
   document.getElementById(`current--${activePlayer}`).textContent =
     scores[activePlayer];
