@@ -37,7 +37,7 @@ const switchPlayer = function () {
   //* .toggle("class-name") method removes the class mentioned inside it when is applied to the element & adds the class mentioned inside is not applied to the element.
 };
 
-//todo: PHASE 1 (Btn 1): Starting Conditions
+//todo: PHASE 1: Starting Conditions
 
 score0Element.textContent = 0;
 score1Element.textContent = 0;
@@ -48,7 +48,7 @@ let currentScore = 0;
 let activePlayer = 0; //* Here, active player is the variable which has values 0 & 1 as active player 0 holds value 0 & active player 1 holds value 1.
 let playing = true; //* playing variable is set to true which means that we are playing the game & buttons will work. We will make playing false as soon as a player wins i.e., score >= 100 & the holdBtn, rollDiceBtn will not work then.
 
-//todo: PHASE 2 (Btn 2): Rolling Dice Functionality (Roll Dice Button)
+//todo: PHASE 2 (Btn 1): Rolling Dice Functionality (Roll Dice Button)
 
 rollDiceBtn.addEventListener("click", function () {
   if (playing) {
@@ -76,7 +76,7 @@ rollDiceBtn.addEventListener("click", function () {
   }
 });
 
-//todo: PHASE 3 (Btn 3): Hold Button Functionality (Hold Button)
+//todo: PHASE 3 (Btn 2): Hold Button Functionality (Hold Button)
 
 holdBtn.addEventListener("click", function () {
   if (playing) {
@@ -107,3 +107,5 @@ holdBtn.addEventListener("click", function () {
     }
   }
 });
+
+//todo: PHASE 4 (Btn 4):
