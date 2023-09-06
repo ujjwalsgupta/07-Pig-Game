@@ -71,5 +71,6 @@ holdBtn.addEventListener("click", function () {
   player1Element.classList.toggle("player--active");
 
   currentScore = 0;
-  current0Element.textContent = currentScore;
+  document.getElementById(`current--${activePlayer}`).textContent =
+    currentScore;
 });
