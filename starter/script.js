@@ -18,8 +18,27 @@ const holdBtn = document.querySelector(".btn--hold");
 //* this method is used to select the id mentioned inside it.
 //* The only difference between .querySelector("") & .getElementById("") is that querySelector is universal (i.e., it can select by elementName, .className, #idName) but getElementById only selects the Id inside it without # symbol.
 
-//? Code for Switch Player
+//todo: PHASE 1: Starting Conditions
+const init = function () {
+  const scores = [0, 0]; //* scores array stores the total scores of each player.
+  let currentScore = 0;
+  let activePlayer = 0; //* Here, active player is the variable which has values 0 & 1 as active player 0 holds value 0 & active player 1 holds value 1.
+  let playing = true; //* playing variable is set to true which means that we are playing the game & buttons will work. We will make playing false as soon as a player wins i.e., score >= 100 & the holdBtn, rollDiceBtn will not work then.
 
+  score0Element.textContent = 0;
+  score1Element.textContent = 0;
+  current0Element.textContent = 0;
+  current1Element.textContent = 0;
+  diceImg.classList.add("hidden");
+  player0Element.classList.remove("player--winner");
+  player1Element.classList.remove("player--winner");
+  player0Element.classList.add("player--active");
+  player1Element.classList.remove("player--active");
+};
+
+init();
+
+//? Code for Switch Player
 const switchPlayer = function () {
   currentScore = 0;
   document.getElementById(`current--${activePlayer}`).textContent =
@@ -36,17 +55,6 @@ const switchPlayer = function () {
 
   //* .toggle("class-name") method removes the class mentioned inside it when is applied to the element & adds the class mentioned inside is not applied to the element.
 };
-
-//todo: PHASE 1: Starting Conditions
-
-score0Element.textContent = 0;
-score1Element.textContent = 0;
-diceImg.classList.add("hidden");
-
-const scores = [0, 0]; //* scores array stores the total scores of each player.
-let currentScore = 0;
-let activePlayer = 0; //* Here, active player is the variable which has values 0 & 1 as active player 0 holds value 0 & active player 1 holds value 1.
-let playing = true; //* playing variable is set to true which means that we are playing the game & buttons will work. We will make playing false as soon as a player wins i.e., score >= 100 & the holdBtn, rollDiceBtn will not work then.
 
 //todo: PHASE 2 (Btn 1): Rolling Dice Functionality (Roll Dice Button)
 
@@ -108,4 +116,8 @@ holdBtn.addEventListener("click", function () {
   }
 });
 
-//todo: PHASE 4 (Btn 4):
+//todo: PHASE 4 (Btn 4): Resetting the Game (New Game Button)
+
+newGameBtn.addEventListener("click", function () {
+  init();
+});
