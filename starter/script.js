@@ -77,6 +77,7 @@ holdBtn.addEventListener("click", function () {
 
   //? Adding Current Score to Total Score
   scores[activePlayer] += currentScore;
+  // score[0] = score[0] + currentScore;
   document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
   // Here, active player is default 0.
