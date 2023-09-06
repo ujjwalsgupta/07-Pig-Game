@@ -78,26 +78,28 @@ rollDiceBtn.addEventListener("click", function () {
 //todo: PHASE 3 (Btn 3): Hold Button Functionality (Hold Button)
 
 holdBtn.addEventListener("click", function () {
-  //? Adding Current Score to Total Score
-  scores[activePlayer] += currentScore;
-  // score[0] = score[0] + currentScore;
-  document.getElementById(`score--${activePlayer}`).textContent =
-    scores[activePlayer];
-  // Here, active player is default 0.
+  if (playing) {
+    //? Adding Current Score to Total Score
+    scores[activePlayer] += currentScore;
+    // score[0] = score[0] + currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent =
+      scores[activePlayer];
+    // Here, active player is default 0.
 
-  //? Check if player's score >= 100. (Winning Condition)
-  if (scores[activePlayer] >= 100) {
-    // Finish the Game
-    playing = false;
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.add("player--winner");
+    //? Check if player's score >= 100. (Winning Condition)
+    if (scores[activePlayer] >= 100) {
+      // Finish the Game
+      playing = false;
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.add("player--winner");
 
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.remove("player-active");
-  } else {
-    //? Switch to next player code:
-    switchPlayer();
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.remove("player-active");
+    } else {
+      //? Switch to next player code:
+      switchPlayer();
+    }
   }
 });
