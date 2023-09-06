@@ -88,7 +88,7 @@ holdBtn.addEventListener("click", function () {
     // Here, active player is default 0.
 
     //? Check if player's score >= 100. (Winning Condition)
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= 20) {
       // Finish the Game
       playing = false;
       document
@@ -98,6 +98,9 @@ holdBtn.addEventListener("click", function () {
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.remove("player-active");
+
+      // Hiding the dice after ending the game
+      diceImg.classList.add("hidden");
     } else {
       //? Switch to next player code:
       switchPlayer();
