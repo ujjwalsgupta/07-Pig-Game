@@ -51,27 +51,28 @@ let playing = true; //* playing variable is set to true which means that we are 
 //todo: PHASE 2 (Btn 2): Rolling Dice Functionality (Roll Dice Button)
 
 rollDiceBtn.addEventListener("click", function () {
-  //? Generating Random Dice Roll
-  const randomDiceNumber = Math.trunc(Math.random() * 6) + 1;
-  console.log(randomDiceNumber);
+  if (playing) {
+    //? Generating Random Dice Roll
+    const randomDiceNumber = Math.trunc(Math.random() * 6) + 1;
+    console.log(randomDiceNumber);
 
-  //? Display Dice
-  diceImg.classList.remove("hidden");
-  diceImg.src = `dice-${randomDiceNumber}.png`;
+    //? Display Dice
+    diceImg.classList.remove("hidden");
+    diceImg.src = `dice-${randomDiceNumber}.png`;
 
-  //? Check for rolled 1: if true, switch to next player
-  if (randomDiceNumber !== 1) {
-    // Add dice No. to current score
-    currentScore += randomDiceNumber;
-    document.getElementById(`current--${activePlayer}`).textContent =
-      currentScore;
-    // Here, active player is default 0.
-    //* The text content will change according to the active player, if activePlayer = 0, then the score will be added to the id "current--0" & due to which current0Element will change.
-  } else {
-    // randomDiceNumber === 1
-
-    //? Switch to next player code:
-    switchPlayer();
+    //? Check for rolled 1: if true, switch to next player
+    if (randomDiceNumber !== 1) {
+      // Add dice No. to current score
+      currentScore += randomDiceNumber;
+      document.getElementById(`current--${activePlayer}`).textContent =
+        currentScore;
+      // Here, active player is default 0.
+      //* The text content will change according to the active player, if activePlayer = 0, then the score will be added to the id "current--0" & due to which current0Element will change.
+    } else {
+      // randomDiceNumber === 1
+      //? Switch to next player code:
+      switchPlayer();
+    }
   }
 });
 
