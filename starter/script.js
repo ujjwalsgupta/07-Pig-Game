@@ -52,6 +52,7 @@ let activePlayer = 0; //* Here, active player is the variable which has values 0
 rollDiceBtn.addEventListener("click", function () {
   //? Generating Random Dice Roll
   const randomDiceNumber = Math.trunc(Math.random() * 6) + 1;
+  console.log(randomDiceNumber);
 
   //? Display Dice
   diceImg.classList.remove("hidden");
