@@ -45,17 +45,20 @@ rollDiceBtn.addEventListener("click", function () {
     currentScore += randomDiceNumber;
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
-    //* The text content will change according to the active player, if activePlayer = 1, then the score will be added to the id "current--1" & due to which current1Element will change.
+    // Here, active player is default 0.
+    //* The text content will change according to the active player, if activePlayer = 0, then the score will be added to the id "current--0" & due to which current0Element will change.
   } else {
     // randomDiceNumber === 1
     // Switch to next player
 
-    activePlayer = activePlayer === 0 ? 1 : 0;
-    //! task of above code: Switching the active player when 1 in dice comes.
-
     currentScore = 0;
     document.getElementById(`current--${activePlayer}`).textContent =
-      currentScore; // changing current active players' current score to 0 before switching to the active player.
+      currentScore;
+    // Here, active player is default 0.
+    // changing the current active players' current score to 0 before switching to the active player.
+
+    activePlayer = activePlayer === 0 ? 1 : 0;
+    //! task of above code: Switching the active player when 1 in dice comes.
 
     //? Visual & style changes when 1 in dice comes.
     player0Element.classList.toggle("player--active");
