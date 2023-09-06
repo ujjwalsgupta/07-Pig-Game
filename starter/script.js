@@ -69,4 +69,7 @@ holdBtn.addEventListener("click", function () {
   //? Visual & style changes when hold button is pressed.
   player0Element.classList.toggle("player--active");
   player1Element.classList.toggle("player--active");
+
+  currentScore = 0;
+  current0Element.textContent = currentScore;
 });
